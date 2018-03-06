@@ -82,18 +82,20 @@ public class MainActivity extends AppCompatActivity {
 
         temp.setText(String.valueOf(++currentSetPoint)); //give setpoint to player and display
 
-        if (currentSet == 4 && currentSetPoint >= 6) { ///winner declaration
-            declareWinner();
 
-        }
-        else if (currentSetPoint >= 6) {// if set is won move to next set
+        if (currentSetPoint >= 6) {// if set is won move to next set
             currentSet++;
             //TODO: add increment to total list view & add setnumber text update
             currentSetTextView.setText(String.valueOf(currentSet+1));
             totalPoins[player-1]++;
+            totalUpdate();
             Toast.makeText(getApplicationContext(),"Player "+player+" wins the set",Toast.LENGTH_LONG).show();
 
-        }else
+        }else if (currentSet == 4 && currentSetPoint >= 6) { ///winner declaration
+            declareWinner();
+
+        }
+        else
             Toast.makeText(getApplicationContext(),"Set point awarded to player "+player,Toast.LENGTH_SHORT).show();
 
 
@@ -111,10 +113,18 @@ public class MainActivity extends AppCompatActivity {
             op = 1;
         else
             op =2;
+
         TextView finalScorePlayer1 = (TextView)findViewById(R.id.player_1_final_optput) ;
         finalScorePlayer1.setText(String.valueOf(totalPoins[0]));
         TextView finalScorePlayer2 = (TextView)findViewById(R.id.player_2_final_output) ;
         finalScorePlayer2.setText(String.valueOf(totalPoins[1]));
         winner.setText("Hurray!   Player "+op+" has Won!");
+    }
+
+    protected void totalUpdate(){
+        TextView finalScorePlayer1 = (TextView)findViewById(scoreboard[1][5]) ;
+        finalScorePlayer1.setText(String.valueOf(totalPoins[0]));
+        TextView finalScorePlayer2 = (TextView)findViewById(scoreboard[2][5]);
+        finalScorePlayer2.setText(String.valueOf(totalPoins[1]));
     }
 }

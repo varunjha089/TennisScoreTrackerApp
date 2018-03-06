@@ -17,50 +17,71 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="Sets" />
+                android:text="Sets"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_header_font_size" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="1" />
+                android:text="1"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_header_font_size" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="2" />
+                android:text="2"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_header_font_size" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="3" />
+                android:text="3"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_header_font_size" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="4" />
+                android:text="4"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_header_font_size" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="5" />
+                android:text="5"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_header_font_size" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="Total" />
+                android:text="Total"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_header_font_size" />
         </TableRow>
 
         <TableRow>
@@ -70,57 +91,78 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:hint="NAME 1"
-                android:text="Player 1" />
+                android:text="P 1"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_1_set_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_1_set_2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_1_set_3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_1_set_4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_1_set_5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_1_final"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
         </TableRow>
 
         <TableRow>
@@ -130,122 +172,170 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:hint="player 2"
-                android:text="Player 2" />
+
+                android:text="P 2"
+
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_2_set_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_2_set_2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_2_set_3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_2_set_4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_2_set_5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
 
             <TextView
                 android:id="@+id/player_2_final"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
         </TableRow>
 
     </TableLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/player_1_name_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:hint="Player 1" />
-
-        <TextView
-            android:id="@+id/player_2_name_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:hint="Player 2" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:background="@drawable/widescreen"
+        android:orientation="vertical"
+        android:padding="30dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Set #" />
+            android:layout_marginTop="10dp">
 
-        <TextView
-            android:id="@+id/current_set_textview"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/player_1_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:hint="Player 1"
+                android:textSize="@dimen/player_header" />
+
+            <TextView
+                android:id="@+id/player_2_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:hint="Player 2"
+                android:textSize="@dimen/player_header" />
+        </LinearLayout>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#000"/>
+        <LinearLayout
+
+
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:hint="Set Number"
-            android:text="1" />
-    </LinearLayout>
+            android:gravity="center">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="Set #"
+                android:textSize="@dimen/set_size"
+                android:textStyle="bold"
+                />
+            <TextView
 
-        <TextView
-            android:id="@+id/player_1_score_textview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:hint="Player 1 Score"
-            android:text="-" />
+                android:id="@+id/current_set_textview"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/set_size"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:paddingLeft="@dimen/player_header"
+                android:text="1"
+                android:textSize="@dimen/set_size"
+                />
 
-        <TextView
-            android:id="@+id/player_2_score_textview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:hint="Player 2 Score"
-            android:text="-" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/player_1_score_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-"
+                android:textSize="@dimen/score_text"/>
+
+            <TextView
+                android:id="@+id/player_2_score_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-"
+                android:textSize="@dimen/score_text"/>
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -269,8 +359,8 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/player_2_score_button"

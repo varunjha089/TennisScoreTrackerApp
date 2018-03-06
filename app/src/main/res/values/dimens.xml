@@ -2,4 +2,10 @@
 <resources>
     <dimen name="default_margin">4dp</dimen>
     <dimen name="max_margin">25dp</dimen>
+    <dimen name="table_header_font_size">24sp</dimen>
+    <dimen name="table_content_font_size">17sp</dimen>
+    <dimen name="player_header">35sp</dimen>
+    <dimen name="set_size">50sp</dimen>
+    <dimen name="score_text">100sp</dimen>
+
 </resources>
