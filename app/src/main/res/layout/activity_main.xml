@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +7,50 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.dsdatsme.scorecard.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#131313"
+        android:minHeight="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width='wrap_content'
+            android:layout_height='wrap_content'
+            android:gravity="left"
+            >
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/tennis_ball_icon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tennis "
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:gravity="right">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000"
+                android:src="@drawable/ic_share_white_24dp"
+                android:textColor="#fff"
+ android:onClick="shareButton"
+
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
 
     <TableLayout
         android:layout_width="match_parent"
@@ -270,6 +315,11 @@
                 android:hint="Player 1"
                 android:textSize="@dimen/player_header" />
 
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000" />
+
             <TextView
                 android:id="@+id/player_2_name_textview"
                 android:layout_width="wrap_content"
@@ -279,10 +329,12 @@
                 android:hint="Player 2"
                 android:textSize="@dimen/player_header" />
         </LinearLayout>
-<View
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="#000"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000" />
+
         <LinearLayout
 
 
@@ -290,32 +342,40 @@
             android:layout_height="wrap_content"
             android:gravity="center">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text="Set #"
-                android:textSize="@dimen/set_size"
-                android:textStyle="bold"
-                />
-            <TextView
+            <RelativeLayout
 
-                android:id="@+id/current_set_textview"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/set_size"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:paddingLeft="@dimen/player_header"
-                android:text="1"
-                android:textSize="@dimen/set_size"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/current_set_textview_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingRight="@dimen/table_content_font_size"
+                    android:text="Set #"
+                    android:textSize="@dimen/set_size"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/current_set_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/current_set_textview_main"
+                    android:paddingLeft="@dimen/default_margin"
+                    android:text="1"
+                    android:textSize="@dimen/set_size"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
 
             <TextView
                 android:id="@+id/player_1_score_textview"
@@ -324,7 +384,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="-"
-                android:textSize="@dimen/score_text"/>
+                android:textSize="@dimen/score_text" />
 
             <TextView
                 android:id="@+id/player_2_score_textview"
@@ -333,10 +393,26 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="-"
-                android:textSize="@dimen/score_text"/>
+                android:textSize="@dimen/score_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/reset_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/roundedcorner"
+                android:src="@drawable/ic_refresh_black_24dp"
+                android:onClick="resetButton"
+                android:text="Reset" />
         </LinearLayout>
 
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -371,16 +447,4 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/reset_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Reset" />
-    </LinearLayout>
 </LinearLayout>
