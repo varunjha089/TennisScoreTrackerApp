@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+//TODO: add share button
     private static final int[][] scoreboard = {
             {},
             {R.id.player_1_set_1, R.id.player_1_set_2, R.id.player_1_set_3, R.id.player_1_set_4, R.id.player_1_set_5, R.id.player_1_final},
@@ -21,9 +22,11 @@ public class MainActivity extends AppCompatActivity {
     Button player1ScoreButton;
     Button player2ScoreButton;
     Button resetButton;
+    TextView currentSetTextView;
     private int currentPlayer1Score = 0;
     private int currentPlayer2Score = 0;
     private int currentSet = 0;
+    int [] totalPoins = {0,0};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         player2ScoreCardTextView = (TextView) findViewById(R.id.player_2_name_scoreboard_textview);
         player1CurrentScoreTextView = (TextView) findViewById(R.id.player_1_score_textview);
         player2CurrentScoreTextView = (TextView) findViewById(R.id.player_2_score_textview);
+        currentSetTextView = (TextView) findViewById(R.id.current_set_textview) ;
         player1ScoreButton = (Button) findViewById(R.id.player_1_score_button);
         player2ScoreButton = (Button) findViewById(R.id.player_2_score_button);
         resetButton = (Button) findViewById(R.id.reset_button);
@@ -42,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         player1ScoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentPlayer1Score >= 4) {
+                if (currentPlayer1Score >= 3) {
                     setPoint(1);
                 } else {
                     currentPlayer1Score++;
@@ -56,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         player2ScoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentPlayer2Score >= 4) {
+                if (currentPlayer2Score >= 3) {
                     setPoint(2);
                 } else {
                     currentPlayer2Score++;
@@ -77,15 +81,40 @@ public class MainActivity extends AppCompatActivity {
         int currentSetPoint = Integer.parseInt(temp.getText().toString());
 
         temp.setText(String.valueOf(++currentSetPoint)); //give setpoint to player and display
-        if (currentSetPoint >= 6) {// if set is won move to next set
+
+        if (currentSet == 4 && currentSetPoint >= 6) { ///winner declaration
+            declareWinner();
+
+        }
+        else if (currentSetPoint >= 6) {// if set is won move to next set
             currentSet++;
             //TODO: add increment to total list view & add setnumber text update
-        }
+            currentSetTextView.setText(String.valueOf(currentSet+1));
+            totalPoins[player-1]++;
+            Toast.makeText(getApplicationContext(),"Player "+player+" wins the set",Toast.LENGTH_LONG).show();
+
+        }else
+            Toast.makeText(getApplicationContext(),"Set point awarded to player "+player,Toast.LENGTH_SHORT).show();
 
 
         //for current score
 
 
 
+    }//end of se point
+
+    protected void declareWinner(){
+        setContentView(R.layout.winner_layout);
+        TextView winner = (TextView)findViewById(R.id.winner_text_view);
+        int op =0 ;
+        if(totalPoins[0]>totalPoins[1])
+            op = 1;
+        else
+            op =2;
+        TextView finalScorePlayer1 = (TextView)findViewById(R.id.player_1_final_optput) ;
+        finalScorePlayer1.setText(String.valueOf(totalPoins[0]));
+        TextView finalScorePlayer2 = (TextView)findViewById(R.id.player_2_final_output) ;
+        finalScorePlayer2.setText(String.valueOf(totalPoins[1]));
+        winner.setText("Hurray!   Player "+op+" has Won!");
     }
 }

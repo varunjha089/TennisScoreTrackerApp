@@ -9,8 +9,7 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <TableRow>
 
@@ -19,49 +18,49 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Sets"/>
+                android:text="Sets" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="1"/>
+                android:text="1" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="2"/>
+                android:text="2" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="3"/>
+                android:text="3" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="4"/>
+                android:text="4" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="5"/>
+                android:text="5" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Total"/>
+                android:text="Total" />
         </TableRow>
 
         <TableRow>
@@ -69,11 +68,11 @@
             <TextView
                 android:id="@+id/player_1_name_scoreboard_textview"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:hint="NAME 1"
-                android:text="Pl 2"/>
+                android:text="Player 1" />
 
             <TextView
                 android:id="@+id/player_1_set_1"
@@ -81,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
 
             <TextView
                 android:id="@+id/player_1_set_2"
@@ -89,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
 
             <TextView
                 android:id="@+id/player_1_set_3"
@@ -113,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
 
             <TextView
                 android:id="@+id/player_1_final"
@@ -121,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
         </TableRow>
 
         <TableRow>
@@ -133,7 +132,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:hint="player 2"
-                android:text="Pl 2"/>
+                android:text="Player 2" />
 
             <TextView
                 android:id="@+id/player_2_set_1"
@@ -141,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
 
             <TextView
                 android:id="@+id/player_2_set_2"
@@ -157,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
 
             <TextView
                 android:id="@+id/player_2_set_4"
@@ -165,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
 
             <TextView
                 android:id="@+id/player_2_set_5"
@@ -173,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
 
             <TextView
                 android:id="@+id/player_2_final"
@@ -181,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="0" />
         </TableRow>
 
     </TableLayout>
@@ -207,13 +206,24 @@
             android:hint="Player 2" />
     </LinearLayout>
 
-
-    <TextView
-        android:id="@+id/current_set_textview"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:hint="Set Number"/>
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set #" />
+
+        <TextView
+            android:id="@+id/current_set_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:hint="Set Number"
+            android:text="1" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -226,7 +236,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:hint="Player 1 Score"
-            android:text="-"/>
+            android:text="-" />
 
         <TextView
             android:id="@+id/player_2_score_textview"
@@ -235,27 +245,40 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:hint="Player 2 Score"
-            android:text="-"/>
+            android:text="-" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
-        <Button
-            android:id="@+id/player_1_score_button"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="p1"
-            />
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/player_2_score_button"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/player_1_score_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="pp2"/>
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/player_2_score_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="+" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -268,7 +291,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Reset"
-            />
+            android:text="Reset" />
     </LinearLayout>
 </LinearLayout>
