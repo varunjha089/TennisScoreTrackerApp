@@ -297,6 +297,7 @@
     </TableLayout>
 
     <LinearLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
@@ -307,7 +308,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:layout_weight="0">
 
             <TextView
                 android:id="@+id/player_1_name_textview"
@@ -342,6 +344,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -381,7 +384,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:layout_weight="0">
 
             <TextView
                 android:id="@+id/player_1_score_textview"
@@ -441,12 +445,27 @@
                 android:id="@+id/player_1_score_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/button_border_2"
+
+                android:clickable="true"
+                android:text="+"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/player_1_score_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@drawable/button_border_2"
                 android:clickable="true"
-
-                android:text="+"
-                android:textSize="30dp" />
+                android:text="@string/foul"
+                android:textSize="30sp" />
         </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/myBlack" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -458,11 +477,21 @@
                 android:id="@+id/player_2_score_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
                 android:background="@drawable/button_border_2"
-                android:text="+"
 
-                android:textSize="30dp" />
+                android:text="+"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/player_2_score_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_border_2"
+                android:text="@string/foul"
+                android:textSize="30sp" />
         </LinearLayout>
     </LinearLayout>
+
 
 </LinearLayout>

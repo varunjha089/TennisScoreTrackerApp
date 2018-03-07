@@ -6,7 +6,7 @@
     <dimen name="table_content_font_size">17sp</dimen>
     <dimen name="player_header">35sp</dimen>
     <dimen name="set_size">50sp</dimen>
-    <dimen name="score_text">100sp</dimen>
+    <dimen name="score_text">95sp</dimen>
     <dimen name="tennis_ball">30dp</dimen>
 
 </resources>

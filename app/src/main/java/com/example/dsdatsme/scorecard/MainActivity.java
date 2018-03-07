@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     TextView player2CurrentScoreTextView;
     Button player1ScoreButton;
     Button player2ScoreButton;
+    Button player1ScoreButton1;
+    Button player2ScoreButton1;
     ImageButton resetButton;
     TextView currentSetTextView;
     int[] totalPoins = {0, 0};
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         currentSetTextView = (TextView) findViewById(R.id.current_set_textview);
         player1ScoreButton = (Button) findViewById(R.id.player_1_score_button);
         player2ScoreButton = (Button) findViewById(R.id.player_2_score_button);
+        player1ScoreButton1 = (Button) findViewById(R.id.player_1_score_button1);
+        player2ScoreButton1 = (Button) findViewById(R.id.player_2_score_button1);
         resetButton = (ImageButton) findViewById(R.id.reset_button);
 
         ////////////////for player 1 button
@@ -51,27 +55,28 @@ public class MainActivity extends AppCompatActivity {
         player1ScoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentPlayer1Score >= 3) {
-                    setPoint(1);
-                } else {
-                    currentPlayer1Score++;
+                player1ScoreUpdate();
+            }
+        });
+        player1ScoreButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player2ScoreUpdate();
 
-                }
-
-                player1CurrentScoreTextView.setText(String.valueOf(score[currentPlayer1Score]));
             }
         });
 ////////////////for player 2 button
         player2ScoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentPlayer2Score >= 3) {
-                    setPoint(2);
-                } else {
-                    currentPlayer2Score++;
+                player2ScoreUpdate();
+            }
+        });
+        player2ScoreButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player1ScoreUpdate();
 
-                }
-                player2CurrentScoreTextView.setText(String.valueOf(score[currentPlayer2Score]));
             }
         });
     }///////////////////////End of onCreate()
@@ -149,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 0; j < 6; j++) {
                 TextView temp = (TextView) findViewById(scoreboard[i][j]);
                 temp.setText("0");
-                temp.setTextColor(R.color.myWhite);
+                temp.setTextColor(getResources().getColor(R.color.myWhite));
             }
             totalPoins[i - 1] = 0;
 
@@ -161,6 +166,27 @@ public class MainActivity extends AppCompatActivity {
         player2CurrentScoreTextView.setText("0");
         currentSetTextView.setText("0");
 
+    }
+
+    public void player1ScoreUpdate() {
+        if (currentPlayer1Score >= 3) {
+            setPoint(1);
+        } else {
+            currentPlayer1Score++;
+
+        }
+
+        player1CurrentScoreTextView.setText(String.valueOf(score[currentPlayer1Score]));
+    }
+
+    public void player2ScoreUpdate() {
+        if (currentPlayer2Score >= 3) {
+            setPoint(2);
+        } else {
+            currentPlayer2Score++;
+
+        }
+        player2CurrentScoreTextView.setText(String.valueOf(score[currentPlayer2Score]));
     }
 
     ////not working............................
