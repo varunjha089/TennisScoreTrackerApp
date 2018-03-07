@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="scorewin">#00F500</color>
+    <color name="myBlack">#000</color>
+    <color name="myWhite">#fff</color>
+    <color name="activityBg">#099FFF</color>
+    <color name="declaration">#4f0a0d</color>
+
 </resources>

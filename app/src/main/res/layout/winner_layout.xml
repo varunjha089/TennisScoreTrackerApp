@@ -1,58 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
-    android:gravity="center">
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/table_layout"
-        >
-        <TableRow
-            android:padding="@dimen/default_margin">
-            <TextView
-                android:layout_margin="@dimen/default_margin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Player 1"
-                android:textSize="25dp"/>
-            <TextView
-                android:layout_margin="@dimen/default_margin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Player 2"
-                android:textSize="25dp"/>
-        </TableRow>
-        <TableRow
-            android:padding="@dimen/default_margin">
-            <TextView
-                android:padding="@dimen/default_margin"
-                android:id="@+id/player_1_final_optput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="30dp"
-                android:gravity="center"/>
-            <TextView
-                android:padding="@dimen/default_margin"
-                android:id="@+id/player_2_final_output"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="30dp"
-                android:gravity="center"/>
-        </TableRow>
-    </TableLayout>
-    <TextView
-        android:id="@+id/winner_text_view"
-        android:layout_margin="@dimen/max_margin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/table_layout"
-        android:textSize="35dp"
-        android:gravity="center"
-        android:hint="Hello World!"/>
 
-</RelativeLayout>
+    android:background="@drawable/winner_background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:minHeight="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width='wrap_content'
+            android:layout_height='wrap_content'
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/tennis_ball_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/table_content_font_size"
+                android:text="@string/tennis"
+                android:textColor="#fff"
+                android:textSize="@dimen/table_content_font_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:gravity="right">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000"
+                android:onClick="shareButton"
+                android:paddingRight="@dimen/default_margin"
+                android:src="@drawable/ic_share_white_24dp"
+                android:textColor="#fff"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/max_margin"
+        android:layout_marginTop="@dimen/max_margin"
+        android:background="@drawable/trophy"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow android:padding="@dimen/default_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin"
+                    android:text="@string/player_1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin"
+                    android:text="@string/player_2"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow android:padding="@dimen/default_margin">
+
+                <TextView
+                    android:id="@+id/player_1_final_optput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/default_margin"
+                    android:text=""
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/player_2_final_output"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/default_margin"
+                    android:text=""
+                    android:textSize="30sp" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/winner_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/max_margin"
+            android:gravity="center"
+            android:text="Hello World!"
+            android:textColor="@color/declaration"
+            android:textSize="@dimen/player_header" />
+    </LinearLayout>
+</LinearLayout>

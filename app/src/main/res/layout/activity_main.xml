@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/button_border"
     android:orientation="vertical"
     tools:context="com.example.dsdatsme.scorecard.MainActivity">
 
@@ -12,40 +13,43 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#131313"
+        android:background="@color/myBlack"
         android:minHeight="?attr/actionBarSize">
 
         <LinearLayout
             android:layout_width='wrap_content'
             android:layout_height='wrap_content'
-            android:gravity="left"
-            >
+            android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/tennis_ball"
+                android:layout_height="@dimen/tennis_ball"
                 android:src="@drawable/tennis_ball_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tennis "
-                android:textColor="#fff"
-                android:textSize="@dimen/table_content_font_size"/>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/table_content_font_size"
+                android:text="@string/tennis"
+                android:textColor="@color/myWhite"
+                android:textSize="@dimen/table_content_font_size" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000"
+            android:background="@color/myBlack"
             android:gravity="right">
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#000"
+                android:background="@color/myBlack"
+                android:onClick="shareButton"
+                android:paddingRight="@dimen/default_margin"
                 android:src="@drawable/ic_share_white_24dp"
-                android:textColor="#fff"
- android:onClick="shareButton"
+                android:textColor="@color/myWhite"
 
                 android:textSize="16dp" />
         </LinearLayout>
@@ -64,8 +68,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="Sets"
-                android:textColor="#fff"
+                android:text="@string/sets"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_header_font_size" />
 
             <TextView
@@ -75,7 +79,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="1"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_header_font_size" />
 
             <TextView
@@ -85,7 +89,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="2"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_header_font_size" />
 
             <TextView
@@ -95,7 +99,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="3"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_header_font_size" />
 
             <TextView
@@ -105,7 +109,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="4"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_header_font_size" />
 
             <TextView
@@ -115,7 +119,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="5"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_header_font_size" />
 
             <TextView
@@ -124,8 +128,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-                android:text="Total"
-                android:textColor="#fff"
+                android:text="@string/total"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_header_font_size" />
         </TableRow>
 
@@ -139,8 +143,8 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:hint="NAME 1"
-                android:text="P 1"
-                android:textColor="#fff"
+                android:text="@string/p_1"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -151,7 +155,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -162,7 +166,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -173,7 +177,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -184,7 +188,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -195,7 +199,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -206,7 +210,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
         </TableRow>
 
@@ -219,10 +223,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
-
-                android:text="P 2"
-
-                android:textColor="#fff"
+                android:text="@string/p_2"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -233,7 +235,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -244,7 +246,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -255,7 +257,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -266,7 +268,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -277,7 +279,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
 
             <TextView
@@ -288,7 +290,7 @@
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textColor="#fff"
+                android:textColor="@color/myWhite"
                 android:textSize="@dimen/table_content_font_size" />
         </TableRow>
 
@@ -297,6 +299,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
         android:background="@drawable/widescreen"
         android:orientation="vertical"
         android:padding="30dp">
@@ -312,7 +315,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:hint="Player 1"
+                android:hint="@string/player_1"
                 android:textSize="@dimen/player_header" />
 
             <View
@@ -326,21 +329,21 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:hint="Player 2"
+                android:hint="@string/player_2"
                 android:textSize="@dimen/player_header" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#000" />
+            android:background="@color/myBlack" />
 
         <LinearLayout
 
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <RelativeLayout
 
@@ -353,7 +356,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingRight="@dimen/table_content_font_size"
-                    android:text="Set #"
+                    android:text="@string/set"
                     android:textSize="@dimen/set_size"
 
                     android:textStyle="bold" />
@@ -369,7 +372,10 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000" />
         </LinearLayout>
 
         <LinearLayout
@@ -385,6 +391,11 @@
                 android:gravity="center"
                 android:text="-"
                 android:textSize="@dimen/score_text" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/myBlack" />
 
             <TextView
                 android:id="@+id/player_2_score_textview"
@@ -406,8 +417,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/roundedcorner"
-                android:src="@drawable/ic_refresh_black_24dp"
                 android:onClick="resetButton"
+                android:src="@drawable/ic_refresh_black_24dp"
                 android:text="Reset" />
         </LinearLayout>
 
@@ -423,13 +434,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
             android:gravity="center">
 
             <Button
                 android:id="@+id/player_1_score_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+" />
+                android:background="@drawable/button_border_2"
+                android:clickable="true"
+
+                android:text="+"
+                android:textSize="30dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -442,8 +458,10 @@
                 android:id="@+id/player_2_score_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button_border_2"
+                android:text="+"
 
-                android:text="+" />
+                android:textSize="30dp" />
         </LinearLayout>
     </LinearLayout>
 

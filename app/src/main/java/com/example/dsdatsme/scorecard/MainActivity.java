@@ -1,24 +1,27 @@
 package com.example.dsdatsme.scorecard;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    //TODO: add share button
     private static final int[][] scoreboard = {
             {},
             {R.id.player_1_set_1, R.id.player_1_set_2, R.id.player_1_set_3, R.id.player_1_set_4, R.id.player_1_set_5, R.id.player_1_final},
             {R.id.player_2_set_1, R.id.player_2_set_2, R.id.player_2_set_3, R.id.player_2_set_4, R.id.player_2_set_5, R.id.player_2_final}
     };
     private static final int score[] = {0, 15, 30, 40, 45};
-    TextView player1ScoreCardTextView;
-    TextView player2ScoreCardTextView;
+    TextView player1ScoreCardTextView;// not used (future scope)
+    TextView player2ScoreCardTextView;// not used (future scope)
     TextView player1CurrentScoreTextView;
     TextView player2CurrentScoreTextView;
     Button player1ScoreButton;
@@ -76,26 +79,26 @@ public class MainActivity extends AppCompatActivity {
     protected void setPoint(int player) {
         currentPlayer1Score = 0;
         currentPlayer2Score = 0;
-
-
+        player1CurrentScoreTextView.setText(String.valueOf(currentPlayer1Score));
+        player2CurrentScoreTextView.setText(String.valueOf(currentPlayer2Score));
         //for scoreboard
         TextView temp = (TextView) findViewById(scoreboard[player][currentSet]);
         int currentSetPoint = Integer.parseInt(temp.getText().toString());
 
         temp.setText(String.valueOf(++currentSetPoint)); //give setpoint to player and display
+        //Log.e("Inside SetPoint","CurrentSet: "+currentSet+ " currentpoint: "+currentSetPoint);
+        if ((currentSet == 4 && currentSetPoint >= 6)) { ///winner declaration
+            totalPoins[player - 1]++;
+            declareWinner();
 
-
-        if (currentSetPoint >= 6) {// if set is won move to next set
+        } else if (currentSetPoint >= 6) {// if set is won move to next set
+            temp.setTextColor(getResources().getColor(R.color.scorewin));
             currentSet++;
-            //TODO: add increment to total list view & add setnumber text update
+            //TODO: add a feature to show the  current set with different color on scoreboard
             currentSetTextView.setText(String.valueOf(currentSet + 1));
             totalPoins[player - 1]++;
             totalUpdate();
             Toast.makeText(getApplicationContext(), "Player " + player + " wins the set", Toast.LENGTH_LONG).show();
-
-        } else if (currentSet == 4 && currentSetPoint >= 6) { ///winner declaration
-            declareWinner();
-
         } else
             Toast.makeText(getApplicationContext(), "Set point awarded to player " + player, Toast.LENGTH_SHORT).show();
 
@@ -129,10 +132,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void shareButton(View view) {
-        Intent msgShare = new Intent();
+        Intent msgShare = new Intent(Intent.ACTION_SEND);
+
+        String msg = "Score:\nplayer 1:" + totalPoins[0] + "\nplayer 2: " + totalPoins[1];
+        msgShare.setType("text/plain");
+        msgShare.putExtra(Intent.EXTRA_SUBJECT, "Final Score");
+        msgShare.putExtra(Intent.EXTRA_TEXT, msg);
+
+        startActivity(Intent.createChooser(msgShare, "Share your Score!"));
 
     }
-    public void resetButton(View view){
 
+    public void resetButton(View view) {
+//TODO: add anim to reset button
+        for (int i = 1; i < 3; i++) {
+            for (int j = 0; j < 6; j++) {
+                TextView temp = (TextView) findViewById(scoreboard[i][j]);
+                temp.setText("0");
+                temp.setTextColor(R.color.myWhite);
+            }
+            totalPoins[i - 1] = 0;
+
+        }
+        currentSet = 0;
+        currentPlayer1Score = 0;
+        currentPlayer2Score = 0;
+        player1CurrentScoreTextView.setText("0");
+        player2CurrentScoreTextView.setText("0");
+        currentSetTextView.setText("0");
+
+    }
+
+    ////not working............................
+    public void didTapButton(View view) {
+        Button button = (Button) findViewById(R.id.player_1_score_button);
+        //ImageButton button = (ImageButton)findViewById(R.id.reset_button);
+        final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+        MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 20);
+        myAnim.setInterpolator(interpolator);
+
+        button.startAnimation(myAnim);
     }
 }
