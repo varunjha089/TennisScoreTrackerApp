@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -54,70 +55,85 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/max_margin"
-        android:layout_marginTop="@dimen/max_margin"
-        android:background="@drawable/trophy"
-        android:gravity="center"
-        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TableLayout
-            android:id="@+id/table_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/max_margin"
+            android:layout_marginTop="@dimen/max_margin"
+            android:background="@drawable/trophy"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <TableRow android:padding="@dimen/default_margin">
+            <TableLayout
+                android:id="@+id/table_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/default_margin"
-                    android:text="@string/player_1"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
+                <TableRow android:padding="@dimen/default_margin">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/default_margin"
-                    android:text="@string/player_2"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-            </TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/default_margin"
+                        android:text="@string/player_1"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
-            <TableRow android:padding="@dimen/default_margin">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/default_margin"
+                        android:text="@string/player_2"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+                </TableRow>
 
-                <TextView
-                    android:id="@+id/player_1_final_optput"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="@dimen/default_margin"
-                    android:text=""
-                    android:textSize="30sp" />
+                <TableRow android:padding="@dimen/default_margin">
 
-                <TextView
-                    android:id="@+id/player_2_final_output"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="@dimen/default_margin"
-                    android:text=""
-                    android:textSize="30sp" />
-            </TableRow>
-        </TableLayout>
+                    <TextView
+                        android:id="@+id/player_1_final_optput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/default_margin"
+                        android:text=""
+                        android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/winner_text_view"
+                    <TextView
+                        android:id="@+id/player_2_final_output"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/default_margin"
+                        android:text=""
+                        android:textSize="30sp" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/winner_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/max_margin"
+                android:gravity="center"
+                android:text="Hello World!"
+                android:textColor="@color/declaration"
+                android:textSize="@dimen/player_header" />
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/max_margin"
-            android:gravity="center"
-            android:text="Hello World!"
-            android:textColor="@color/declaration"
-            android:textSize="@dimen/player_header" />
-    </LinearLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="confetti.json"
+            app:lottie_loop="true" />
+    </RelativeLayout>
 </LinearLayout>

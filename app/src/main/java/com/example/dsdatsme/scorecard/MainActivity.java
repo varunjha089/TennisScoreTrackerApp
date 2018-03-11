@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             currentSetTextView.setText(String.valueOf(currentSet + 1));
             totalPoins[player - 1]++;
             totalUpdate();
-            Toast.makeText(getApplicationContext(), "Player " + player + " wins the set", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Player " + player + " wins the set", Toast.LENGTH_SHORT).show();
         } else
             Toast.makeText(getApplicationContext(), "Set point awarded to player " + player, Toast.LENGTH_SHORT).show();
 
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         currentPlayer2Score = 0;
         player1CurrentScoreTextView.setText("0");
         player2CurrentScoreTextView.setText("0");
-        currentSetTextView.setText("0");
+        currentSetTextView.setText("1");
 
     }
 
